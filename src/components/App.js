@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Quiz from "./Quiz";
 
 class App extends Component {
   render() {
@@ -7,6 +8,7 @@ class App extends Component {
         <header>
           <h1>Renshū</h1>
         </header>
+        <Quiz />
       </div>
     );
   }
