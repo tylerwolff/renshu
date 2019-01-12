@@ -9,15 +9,43 @@ const Wrapper = styled.div`
   justify-content: center;
   width: 100%;
   min-height: 100vh;
+  background-color: #f5f5f5;
 `;
 
 const Content = styled.div`
   margin-bottom: 3em;
+  text-align: center;
 `;
 
 const Prompt = styled.h1`
-  font-size: 8em;
+  margin: 0 0 2rem 0;
+  font-size: 32vmin;
+  line-height: 1;
   text-align: center;
+`;
+
+const Input = styled.input`
+  width: 100%;
+  font-size: 2rem;
+  text-align: center;
+  color: #666;
+  background-color: #f5f5f5;
+  border: 0;
+  outline: 0;
+`;
+
+const Button = styled.button`
+  text-decoration: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0;
+  padding: 1em 2em;
+  height: auto;
+  color: #333;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
+  vertical-align: middle;
 `;
 
 class Quiz extends Component {
@@ -57,13 +85,22 @@ class Quiz extends Component {
     return (
       <Wrapper>
         <Content>
-          <Prompt>{current.character}</Prompt>
-          <input
-            type="text"
-            value={answer}
-            onChange={this.handleChange}
-            autoFocus={true}
-          />
+          {current ? (
+            <>
+              <Prompt>{current.character}</Prompt>
+              <Input
+                type="text"
+                value={answer}
+                onChange={this.handleChange}
+                autoFocus={true}
+              />
+            </>
+          ) : (
+            <>
+              <Prompt>すごいよ!</Prompt>
+              <Button onClick={() => alert("reset")}>Start again</Button>
+            </>
+          )}
         </Content>
       </Wrapper>
     );
