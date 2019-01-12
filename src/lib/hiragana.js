@@ -55,5 +55,31 @@ export default [
 
   { romaji: "wa", character: "わ", row: ROWS.WA },
   { romaji: "wo", character: "を", row: ROWS.WA },
-  { romaji: "n", character: "ん", row: ROWS.WA }
+  { romaji: "n", character: "ん", row: ROWS.WA },
+
+  { romaji: "ga", character: "が", row: ROWS.ALT },
+  { romaji: "gi", character: "ぎ", row: ROWS.ALT },
+  { romaji: "gu", character: "ぐ", row: ROWS.ALT },
+  { romaji: "ge", character: "げ", row: ROWS.ALT },
+  { romaji: "go", character: "ご", row: ROWS.ALT },
+  { romaji: "za", character: "ざ", row: ROWS.ALT },
+  { romaji: "ji", character: "じ", row: ROWS.ALT },
+  { romaji: "zu", character: "ず", row: ROWS.ALT },
+  { romaji: "ze", character: "ぜ", row: ROWS.ALT },
+  { romaji: "zo", character: "ぞ", row: ROWS.ALT },
+  { romaji: "da", character: "だ", row: ROWS.ALT },
+  { romaji: "ji", character: "ぢ", row: ROWS.ALT },
+  { romaji: "zu", character: "づ", row: ROWS.ALT },
+  { romaji: "de", character: "で", row: ROWS.ALT },
+  { romaji: "do", character: "ど", row: ROWS.ALT },
+  { romaji: "ba", character: "ば", row: ROWS.ALT },
+  { romaji: "bi", character: "び", row: ROWS.ALT },
+  { romaji: "bu", character: "ぶ", row: ROWS.ALT },
+  { romaji: "be", character: "べ", row: ROWS.ALT },
+  { romaji: "bo", character: "ぼ", row: ROWS.ALT },
+  { romaji: "pa", character: "ぱ", row: ROWS.ALT },
+  { romaji: "pi", character: "ぴ", row: ROWS.ALT },
+  { romaji: "pu", character: "ぷ", row: ROWS.ALT },
+  { romaji: "pe", character: "ぺ", row: ROWS.ALT },
+  { romaji: "po", character: "ぽ", row: ROWS.ALT }
 ];
