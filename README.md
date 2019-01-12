@@ -1,3 +1,4 @@
+![App screenshot](https://github.com/tylerwolff/renshu/blob/master/public/screenshot.png)
 
 ### `yarn start`
 
