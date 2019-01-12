@@ -8,6 +8,12 @@ const AppInfo = styled.div`
   right: 0;
   padding: 1em;
   font-size: 1em;
+  opacity: 0.75;
+  transition: opacity 0.2s ease-out;
+
+  &:hover {
+    opacity: 1;
+  }
 `;
 
 class App extends Component {
