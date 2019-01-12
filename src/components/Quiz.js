@@ -54,9 +54,7 @@ const ProgressBar = styled.div`
   left: 0;
   height: 1.5vmin;
   width: ${({ progress }) => progress + "%"};
-  background-image: linear-gradient(to right, #ed6ea0 0%, #ec8c69 100%);
-  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-  background-image: linear-gradient(to right, #cfd9df 0%, #e2ebf0 100%);
+  background: #b19cd9;
   border-top-right-radius: 0.25rem;
   border-bottom-right-radius: 0.25rem;
   transition: width 0.15s ease-in-out;
