@@ -48,6 +48,20 @@ const Button = styled.button`
   vertical-align: middle;
 `;
 
+const ProgressBar = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1.5vmin;
+  width: ${({ progress }) => progress + "%"};
+  background-image: linear-gradient(to right, #ed6ea0 0%, #ec8c69 100%);
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  background-image: linear-gradient(to right, #cfd9df 0%, #e2ebf0 100%);
+  border-top-right-radius: 0.25rem;
+  border-bottom-right-radius: 0.25rem;
+  transition: width 0.15s ease-in-out;
+`;
+
 class Quiz extends Component {
   constructor(props) {
     super(props);
@@ -57,6 +71,7 @@ class Quiz extends Component {
 
     this.state = {
       all,
+      initialLength: all.length,
       current: all[0],
       answer: ""
     };
@@ -80,29 +95,33 @@ class Quiz extends Component {
   }
 
   render() {
-    const { current, answer } = this.state;
+    const { all, current, answer, initialLength } = this.state;
+    const progress = ((initialLength - all.length) / initialLength) * 100;
 
     return (
-      <Wrapper>
-        <Content>
-          {current ? (
-            <>
-              <Prompt>{current.character}</Prompt>
-              <Input
-                type="text"
-                value={answer}
-                onChange={this.handleChange}
-                autoFocus={true}
-              />
-            </>
-          ) : (
-            <>
-              <Prompt>すごいよ!</Prompt>
-              <Button onClick={() => alert("reset")}>Start again</Button>
-            </>
-          )}
-        </Content>
-      </Wrapper>
+      <>
+        <ProgressBar progress={progress} />
+        <Wrapper>
+          <Content>
+            {current ? (
+              <>
+                <Prompt>{current.character}</Prompt>
+                <Input
+                  type="text"
+                  value={answer}
+                  onChange={this.handleChange}
+                  autoFocus={true}
+                />
+              </>
+            ) : (
+              <>
+                <Prompt>すごいよ!</Prompt>
+                <Button onClick={() => alert("reset")}>Start again</Button>
+              </>
+            )}
+          </Content>
+        </Wrapper>
+      </>
     );
   }
 }
