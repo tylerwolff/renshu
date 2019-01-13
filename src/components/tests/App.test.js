@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Button from './Button';
+import App from '../App';
 
-it('renders without crashing', () => {
+it('renders correctly', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Button />, div);
+  ReactDOM.render(<App />, div);
   ReactDOM.unmountComponentAtNode(div);
 });
