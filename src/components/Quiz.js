@@ -80,7 +80,7 @@ class Quiz extends Component {
   handleChange(e) {
     const val = e.target.value;
 
-    if (val === this.state.current.romaji) {
+    if (val === this.state.current.sound) {
       const remainingCharacters = this.state.all.slice(1);
       return this.setState({
         all: remainingCharacters,
