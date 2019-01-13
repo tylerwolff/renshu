@@ -43,6 +43,7 @@ class Quiz extends Component {
       initialLength: all.length,
       current: all[0],
       answer: '',
+      inputPlaceholder: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -64,7 +65,13 @@ class Quiz extends Component {
   }
 
   render() {
-    const { all, current, answer, initialLength } = this.state;
+    const {
+      all,
+      current,
+      answer,
+      initialLength,
+      inputPlaceholder,
+    } = this.state;
     const progress = ((initialLength - all.length) / initialLength) * 100;
 
     return (
@@ -79,6 +86,11 @@ class Quiz extends Component {
                   type="text"
                   value={answer}
                   onChange={this.handleChange}
+                  placeholder={inputPlaceholder}
+                  onBlur={() =>
+                    this.setState({ inputPlaceholder: 'Enter sound' })
+                  }
+                  onFocus={() => this.setState({ inputPlaceholder: '' })}
                   autoFocus={true}
                 />
               </>
