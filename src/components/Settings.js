@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/core';
 import ROWS from '../lib/rows';
+import Button from './Button';
 import { ReactComponent as CloseIcon } from '../assets/round-clear-24px.svg';
 
 const fadeIn = keyframes`
@@ -29,12 +30,20 @@ const Overlay = styled.div`
 `;
 
 const CloseButton = styled.button`
-  position: absolute;
-  top: 1em;
-  right: 1em;
+  float: right;
   background: none;
   border: 0;
   cursor: pointer;
+`;
+
+const Heading = styled.h1`
+  padding-bottom: 0.875em;
+  border-bottom: 1px solid #000;
+`;
+
+const OptionsForm = styled.form`
+  display: flex;
+  justify-content: space-between;
 `;
 
 const AppInfo = styled.div`
@@ -51,20 +60,40 @@ const AppInfo = styled.div`
   }
 `;
 
+const Text = styled.span`
+  color: ${({ color }) => color};
+`;
+
 class Settings extends Component {
   render() {
     const { onClose } = this.props;
 
+    const renderRow = r => (
+      <p key={r.key}>
+        <strong>{r.name}</strong> · <Text color="#666">{r.description}</Text>
+      </p>
+    );
+
     return (
       <Overlay>
-        <CloseButton type="button" onClick={onClose}>
-          <CloseIcon />
-        </CloseButton>
-        <div>
-          <h1>Your settings</h1>
-          {Object.values(ROWS).map(r => (
-            <p key={r}>{r}</p>
-          ))}
+        <div style={{ minWidth: '50%' }}>
+          <Heading>
+            Your settings{' '}
+            <CloseButton type="button" onClick={onClose}>
+              <CloseIcon />
+            </CloseButton>
+          </Heading>
+          <OptionsForm>
+            <div>
+              <h3>Hiragana ひらがな</h3>
+              {Object.values(ROWS).map(r => renderRow(r))}
+            </div>
+            <div>
+              <h3>Katakana カタカナ</h3>
+              {Object.values(ROWS).map(r => renderRow(r))}
+            </div>
+          </OptionsForm>
+          <Button type="submit">Update</Button>
         </div>
         <AppInfo>
           Made by{' '}

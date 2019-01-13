@@ -31,7 +31,7 @@ const SettingsLink = styled.button`
 
 class App extends Component {
   state = {
-    showSettings: false,
+    showSettings: true,
   };
 
   render() {
