@@ -9,5 +9,6 @@ export default {
   YA: "ya",
   RA: "ra",
   WA: "wa",
-  ALT: "alt"
+  ALT: "alt",
+  YOON: "yoon"
 };
