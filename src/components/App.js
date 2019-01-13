@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import styled from "@emotion/styled";
-import Quiz from "./Quiz";
+import React, { Component } from 'react';
+import styled from '@emotion/styled';
+import Quiz from './Quiz';
 
 const AppInfo = styled.div`
   position: absolute;
@@ -22,7 +22,7 @@ class App extends Component {
       <div>
         <Quiz />
         <AppInfo>
-          Made by{" "}
+          Made by{' '}
           <a
             href="https://tylerwolff.com"
             target="_blank"

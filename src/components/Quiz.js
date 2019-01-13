@@ -1,7 +1,14 @@
-import React, { Component } from "react";
-import styled from "@emotion/styled";
-import hiragana from "../lib/hiragana";
-import katakana from "../lib/katakana";
+import React, { Component } from 'react';
+import styled from '@emotion/styled';
+
+// Character sets
+import hiragana from '../lib/hiragana';
+import katakana from '../lib/katakana';
+
+// UI elements
+import Button from './Button';
+import ProgressBar from './ProgressBar';
+import TextInput from './TextInput';
 
 const Wrapper = styled.div`
   display: flex;
@@ -24,42 +31,6 @@ const Prompt = styled.h1`
   text-align: center;
 `;
 
-const Input = styled.input`
-  width: 100%;
-  font-size: 2rem;
-  text-align: center;
-  color: #666;
-  background-color: #f5f5f5;
-  border: 0;
-  outline: 0;
-`;
-
-const Button = styled.button`
-  text-decoration: none;
-  cursor: pointer;
-  display: inline-block;
-  margin: 0;
-  padding: 1em 2em;
-  height: auto;
-  color: #333;
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  box-shadow: 0 2px 3px rgba(0, 0, 0, 0.05);
-  vertical-align: middle;
-`;
-
-const ProgressBar = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 1.5vmin;
-  width: ${({ progress }) => progress + "%"};
-  background: #b19cd9;
-  border-top-right-radius: 0.25rem;
-  border-bottom-right-radius: 0.25rem;
-  transition: width 0.15s ease-in-out;
-`;
-
 class Quiz extends Component {
   constructor(props) {
     super(props);
@@ -71,7 +42,7 @@ class Quiz extends Component {
       all,
       initialLength: all.length,
       current: all[0],
-      answer: ""
+      answer: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -85,7 +56,7 @@ class Quiz extends Component {
       return this.setState({
         all: remainingCharacters,
         current: remainingCharacters[0],
-        answer: ""
+        answer: '',
       });
     }
 
@@ -104,7 +75,7 @@ class Quiz extends Component {
             {current ? (
               <>
                 <Prompt>{current.character}</Prompt>
-                <Input
+                <TextInput
                   type="text"
                   value={answer}
                   onChange={this.handleChange}
@@ -114,7 +85,7 @@ class Quiz extends Component {
             ) : (
               <>
                 <Prompt>すごいよ!</Prompt>
-                <Button onClick={() => alert("reset")}>Start again</Button>
+                <Button onClick={() => alert('reset')}>Start again</Button>
               </>
             )}
           </Content>
