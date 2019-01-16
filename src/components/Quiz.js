@@ -50,7 +50,7 @@ class Quiz extends Component {
   }
 
   handleChange(e) {
-    const val = e.target.value;
+    const val = e.target.value.trim().toLowerCase();
 
     if (val === this.state.current.sound) {
       const remainingCharacters = this.state.all.slice(1);
@@ -97,7 +97,9 @@ class Quiz extends Component {
             ) : (
               <>
                 <Prompt>すごいよ!</Prompt>
-                <Button onClick={() => alert('reset')}>Start again</Button>
+                <Button onClick={() => window.location.reload()}>
+                  Start again
+                </Button>
               </>
             )}
           </Content>
