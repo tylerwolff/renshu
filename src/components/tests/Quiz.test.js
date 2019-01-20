@@ -1,9 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import TestRenderer from 'react-test-renderer';
 import Quiz from '../Quiz';
+import hiragana from '../../lib/hiragana';
 
 it('renders correctly', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<Quiz />, div);
-  ReactDOM.unmountComponentAtNode(div);
+  const tree = TestRenderer.create(<Quiz questions={hiragana} />).toJSON();
+  expect(tree).toMatchSnapshot();
 });

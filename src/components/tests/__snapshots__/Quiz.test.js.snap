@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Array [
+  <div
+    className="css-dngzx1"
+  />,
+  <div
+    className="css-165msc7"
+  >
+    <div
+      className="css-16ufovt"
+    >
+      <h1
+        className="css-s1vw9v"
+      >
+        あ
+      </h1>
+      <input
+        autoFocus={true}
+        className="css-pr63pg"
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        placeholder=""
+        type="text"
+        value=""
+      />
+    </div>
+  </div>,
+]
+`;

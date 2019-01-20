@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div>
+  <nav>
+    <button
+      className="css-jzhkdu"
+      onClick={[Function]}
+    >
+      <svg>
+        round-menu-24px.svg
+      </svg>
+    </button>
+    <div
+      className="css-a7vv3r"
+    >
+      <h2>
+        Japanese Quizes
+      </h2>
+      <hr />
+      <ul
+        className="css-wmudcw"
+      >
+        <li>
+          <a
+            className="css-1hap0l9"
+            href="/"
+            onClick={[Function]}
+          >
+            Hiragana & Katakana
+          </a>
+        </li>
+        <li>
+          <a
+            className="css-1hap0l9"
+            href="/numbers"
+            onClick={[Function]}
+          >
+            Numbers
+            <span
+              className="css-1p6uukj"
+            >
+              New
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+`;
