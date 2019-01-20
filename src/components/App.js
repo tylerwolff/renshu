@@ -5,6 +5,7 @@ import {
   Route,
   Redirect,
 } from 'react-router-dom';
+import Nav from './Nav';
 
 // Quizes
 import QuizKana from './QuizKana';
@@ -15,11 +16,14 @@ class App extends Component {
     return (
       <div>
         <Router>
-          <Switch>
-            <Route exact path="/" component={QuizKana} />
-            <Route path="/numbers" component={QuizNumbers} />
-            <Redirect to="/" />
-          </Switch>
+          <div>
+            <Nav />
+            <Switch>
+              <Route exact path="/" component={QuizKana} />
+              <Route path="/numbers" component={QuizNumbers} />
+              <Redirect to="/" />
+            </Switch>
+          </div>
         </Router>
       </div>
     );
