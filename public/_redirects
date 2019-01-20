@@ -1,0 +1,2 @@
+# Redirect default Netlify subdomain to primary domain
+https://renshu.netlify.com/* https://www.japanese-quiz.com/:splat 301!
