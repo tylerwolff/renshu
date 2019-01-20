@@ -6,8 +6,12 @@ import {
   Route,
   Redirect,
 } from 'react-router-dom';
-import Quiz from './Quiz';
 import Settings from './Settings';
+
+// Quizes
+import QuizKana from './QuizKana';
+import QuizNumbers from './QuizNumbers';
+
 import { ReactComponent as SettingsIcon } from '../assets/round-settings-24px.svg';
 
 const SettingsLink = styled.button`
@@ -47,7 +51,8 @@ class App extends Component {
       <div>
         <Router>
           <Switch>
-            <Route exact path="/" component={Quiz} />
+            <Route exact path="/" component={QuizKana} />
+            <Route path="/numbers" component={QuizNumbers} />
             <Redirect to="/" />
           </Switch>
         </Router>

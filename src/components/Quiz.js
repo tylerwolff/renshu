@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import styled from '@emotion/styled';
 
-// Character sets
-import hiragana from '../lib/hiragana';
-import katakana from '../lib/katakana';
-
 // UI elements
 import Button from './Button';
 import ProgressBar from './ProgressBar';
@@ -35,8 +31,7 @@ class Quiz extends Component {
   constructor(props) {
     super(props);
 
-    // TODO: customize what can be tested per user
-    const all = hiragana.concat(katakana).sort(() => 0.5 - Math.random());
+    const all = [...props.questions];
 
     this.state = {
       all,
