@@ -1,5 +1,11 @@
 import React, { Component } from 'react';
 import styled from '@emotion/styled';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from 'react-router-dom';
 import Quiz from './Quiz';
 import Settings from './Settings';
 import { ReactComponent as SettingsIcon } from '../assets/round-settings-24px.svg';
@@ -39,7 +45,12 @@ class App extends Component {
 
     return (
       <div>
-        <Quiz />
+        <Router>
+          <Switch>
+            <Route exact path="/" component={Quiz} />
+            <Redirect to="/" />
+          </Switch>
+        </Router>
         <SettingsLink
           type="button"
           onClick={() => this.setState({ showSettings: true })}
