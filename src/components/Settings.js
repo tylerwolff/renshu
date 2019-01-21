@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/core';
 import ROWS from '../lib/rows';
@@ -64,50 +64,46 @@ const Text = styled.span`
   color: ${({ color }) => color};
 `;
 
-class Settings extends Component {
-  render() {
-    const { onClose } = this.props;
+const Settings = props => {
+  const renderRow = r => (
+    <p key={r.key}>
+      <strong>{r.name}</strong> · <Text color="#666">{r.description}</Text>
+    </p>
+  );
 
-    const renderRow = r => (
-      <p key={r.key}>
-        <strong>{r.name}</strong> · <Text color="#666">{r.description}</Text>
-      </p>
-    );
-
-    return (
-      <Overlay>
-        <div style={{ minWidth: '50%' }}>
-          <Heading>
-            Your settings{' '}
-            <CloseButton type="button" onClick={onClose}>
-              <CloseIcon />
-            </CloseButton>
-          </Heading>
-          <OptionsForm>
-            <div>
-              <h3>Hiragana ひらがな</h3>
-              {Object.values(ROWS).map(r => renderRow(r))}
-            </div>
-            <div>
-              <h3>Katakana カタカナ</h3>
-              {Object.values(ROWS).map(r => renderRow(r))}
-            </div>
-          </OptionsForm>
-          <Button type="submit">Update</Button>
-        </div>
-        <AppInfo>
-          Made by{' '}
-          <a
-            href="https://tylerwolff.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            tw
-          </a>
-        </AppInfo>
-      </Overlay>
-    );
-  }
-}
+  return (
+    <Overlay>
+      <div style={{ minWidth: '50%' }}>
+        <Heading>
+          Your settings{' '}
+          <CloseButton type="button" onClick={props.onClose}>
+            <CloseIcon />
+          </CloseButton>
+        </Heading>
+        <OptionsForm>
+          <div>
+            <h3>Hiragana ひらがな</h3>
+            {Object.values(ROWS).map(r => renderRow(r))}
+          </div>
+          <div>
+            <h3>Katakana カタカナ</h3>
+            {Object.values(ROWS).map(r => renderRow(r))}
+          </div>
+        </OptionsForm>
+        <Button type="submit">Update</Button>
+      </div>
+      <AppInfo>
+        Made by{' '}
+        <a
+          href="https://tylerwolff.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          tw
+        </a>
+      </AppInfo>
+    </Overlay>
+  );
+};
 
 export default Settings;
