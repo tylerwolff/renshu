@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import Settings from './Settings';
 import Quiz from './Quiz';
@@ -35,31 +35,20 @@ const SettingsLink = styled.button`
 `;
 
 // TODO: customize what can be tested per user
-class QuizKana extends Component {
-  state = {
-    showSettings: false,
-  };
+const QuizKana = props => {
+  const [showSettings, setShowSettings] = useState(false);
+  const KANA = hiragana.concat(katakana).sort(() => 0.5 - Math.random());
 
-  render() {
-    const { showSettings } = this.state;
-    const kana = hiragana.concat(katakana).sort(() => 0.5 - Math.random());
-
-    return (
-      <div>
-        <Quiz questions={kana} />
-        <SettingsLink
-          type="button"
-          onClick={() => this.setState({ showSettings: true })}
-        >
-          <SettingsIcon />
-          <span>Settings</span>
-        </SettingsLink>
-        {showSettings && (
-          <Settings onClose={() => this.setState({ showSettings: false })} />
-        )}
-      </div>
-    );
-  }
-}
+  return (
+    <div>
+      <Quiz questions={KANA} />
+      <SettingsLink type="button" onClick={() => setShowSettings(true)}>
+        <SettingsIcon />
+        <span>Settings</span>
+      </SettingsLink>
+      {showSettings && <Settings onClose={() => setShowSettings(false)} />}
+    </div>
+  );
+};
 
 export default QuizKana;
