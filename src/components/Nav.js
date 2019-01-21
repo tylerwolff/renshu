@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import OutsideClickHandler from 'react-outside-click-handler';
 import { Link } from 'react-router-dom';
@@ -48,51 +48,35 @@ const Badge = styled.span`
   border-radius: 2px;
 `;
 
-class Nav extends Component {
-  state = {
-    showNav: false,
-  };
+const Nav = props => {
+  const [show, setShow] = useState(false);
 
-  render() {
-    const { showNav } = this.state;
-
-    return (
-      <OutsideClickHandler
-        onOutsideClick={() => {
-          this.setState({ showNav: false });
-        }}
-      >
-        <nav>
-          <NavToggle onClick={() => this.setState({ showNav: true })}>
-            <NavIcon />
-          </NavToggle>
-          <NavigationPanel show={showNav}>
-            <h2>Japanese Quizes</h2>
-            <hr />
-            <Links>
-              <li>
-                <NavLink
-                  to="/"
-                  onClick={() => this.setState({ showNav: false })}
-                >
-                  Hiragana & Katakana
-                </NavLink>
-              </li>
-              <li>
-                <NavLink
-                  to="/numbers"
-                  onClick={() => this.setState({ showNav: false })}
-                >
-                  Numbers
-                  <Badge>New</Badge>
-                </NavLink>
-              </li>
-            </Links>
-          </NavigationPanel>
-        </nav>
-      </OutsideClickHandler>
-    );
-  }
-}
+  return (
+    <OutsideClickHandler onOutsideClick={() => setShow(false)}>
+      <nav>
+        <NavToggle onClick={() => setShow(true)}>
+          <NavIcon />
+        </NavToggle>
+        <NavigationPanel show={show}>
+          <h2>Japanese Quizes</h2>
+          <hr />
+          <Links>
+            <li>
+              <NavLink to="/" onClick={() => setShow(false)}>
+                Hiragana & Katakana
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/numbers" onClick={() => setShow(false)}>
+                Numbers
+                <Badge>New</Badge>
+              </NavLink>
+            </li>
+          </Links>
+        </NavigationPanel>
+      </nav>
+    </OutsideClickHandler>
+  );
+};
 
 export default Nav;
