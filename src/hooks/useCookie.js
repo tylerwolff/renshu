@@ -20,11 +20,14 @@ const getCookie = name => {
 };
 
 export default (key, initialValue) => {
-  const [item, setItem] = useState(getCookie(key) || initialValue);
+  const [item, setItem] = useState(() => {
+    const value = getCookie(key);
+    return value ? JSON.parse(value) : initialValue;
+  });
 
   const updateItem = (value, options = { days: 7, path: '/' }) => {
     setItem(value);
-    setCookie(key, value, options);
+    setCookie(key, JSON.stringify(value), options);
   };
 
   return [item, updateItem];

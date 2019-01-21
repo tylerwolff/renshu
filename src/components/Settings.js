@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/core';
+import useCookie from '../hooks/useCookie';
 import ROWS from '../lib/rows';
 import Button from './Button';
 import { ReactComponent as CloseIcon } from '../assets/round-clear-24px.svg';
@@ -64,7 +65,16 @@ const Text = styled.span`
   color: ${({ color }) => color};
 `;
 
+const getInitialSettings = () => {
+  return Object.keys(ROWS).reduce((acc, r) => {
+    acc[r] = true;
+    return acc;
+  }, {});
+};
+
 const Settings = props => {
+  const [settings, setSettings] = useCookie('quizKana', getInitialSettings());
+
   const renderRow = r => (
     <p key={r.key}>
       <strong>{r.name}</strong> · <Text color="#666">{r.description}</Text>
@@ -90,7 +100,17 @@ const Settings = props => {
             {Object.values(ROWS).map(r => renderRow(r))}
           </div>
         </OptionsForm>
-        <Button type="submit">Update</Button>
+        <Button type="button" onClick={() => {}}>
+          Save
+        </Button>
+        <Button
+          type="button"
+          onClick={() => {
+            setSettings(getInitialSettings());
+          }}
+        >
+          Reset
+        </Button>
       </div>
       <AppInfo>
         Made by{' '}
