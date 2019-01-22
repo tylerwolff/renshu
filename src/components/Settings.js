@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/core';
-import useCookie from '../hooks/useCookie';
+import useCookie from 'react-use-cookie';
 import ROWS from '../lib/rows';
 import Button from './Button';
 import { ReactComponent as CloseIcon } from '../assets/round-clear-24px.svg';
@@ -73,8 +73,11 @@ const getInitialSettings = () => {
 };
 
 const Settings = props => {
-  const [settings, setSettings] = useCookie('quizKana', getInitialSettings());
-
+  const [settings, setSettings] = useCookie(
+    'quizKana',
+    JSON.stringify(getInitialSettings())
+  );
+  console.log(settings);
   const renderRow = r => (
     <p key={r.key}>
       <strong>{r.name}</strong> · <Text color="#666">{r.description}</Text>
@@ -106,7 +109,7 @@ const Settings = props => {
         <Button
           type="button"
           onClick={() => {
-            setSettings(getInitialSettings());
+            setSettings(JSON.stringify(getInitialSettings()));
           }}
         >
           Reset
