@@ -2,7 +2,6 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/core';
 import useCookie from 'react-use-cookie';
-import ROWS from '../lib/rows';
 import Button from './Button';
 import { ReactComponent as CloseIcon } from '../assets/round-clear-24px.svg';
 
@@ -45,6 +44,11 @@ const Heading = styled.h1`
 const OptionsForm = styled.form`
   display: flex;
   justify-content: space-between;
+  margin-bottom: 1em;
+`;
+
+const OptionCheck = styled.input`
+  margin-right: 1em;
 `;
 
 const AppInfo = styled.div`
@@ -66,18 +70,31 @@ const Text = styled.span`
 `;
 
 const getInitialSettings = () => {
-  return Object.keys(ROWS).reduce((acc, r) => {
-    acc[r] = true;
-    return acc;
-  }, {});
+  // TODO: enable full
+  // return Object.keys(ROWS).reduce((acc, r) => {
+  //   acc[r] = true;
+  //   return acc;
+  // }, {});
+
+  return JSON.stringify({
+    hiragana: true,
+    katakana: true,
+  });
 };
 
 const Settings = props => {
-  const [settings, setSettings] = useCookie(
-    'quizKana',
-    JSON.stringify(getInitialSettings())
-  );
-  console.log(settings);
+  const [settings, setSettings] = useCookie('quizKana', getInitialSettings());
+  const settingsObj = JSON.parse(settings);
+
+  const handleCheck = key => {
+    setSettings(
+      JSON.stringify({
+        ...settingsObj,
+        [key]: !settingsObj[key],
+      })
+    );
+  };
+
   const renderRow = r => (
     <p key={r.key}>
       <strong>{r.name}</strong> · <Text color="#666">{r.description}</Text>
@@ -95,24 +112,30 @@ const Settings = props => {
         </Heading>
         <OptionsForm>
           <div>
-            <h3>Hiragana ひらがな</h3>
-            {Object.values(ROWS).map(r => renderRow(r))}
+            <h3>
+              <OptionCheck
+                name="hiragana"
+                type="checkbox"
+                checked={settingsObj.hiragana}
+                onChange={() => handleCheck('hiragana')}
+              />
+              Hiragana ひらがな
+            </h3>
           </div>
           <div>
-            <h3>Katakana カタカナ</h3>
-            {Object.values(ROWS).map(r => renderRow(r))}
+            <h3>
+              <OptionCheck
+                name="katakana"
+                type="checkbox"
+                checked={settingsObj.katakana}
+                onChange={() => handleCheck('katakana')}
+              />
+              Katakana カタカナ
+            </h3>
           </div>
         </OptionsForm>
-        <Button type="button" onClick={() => {}}>
+        <Button type="button" onClick={() => props.onSave(settingsObj)}>
           Save
-        </Button>
-        <Button
-          type="button"
-          onClick={() => {
-            setSettings(JSON.stringify(getInitialSettings()));
-          }}
-        >
-          Reset
         </Button>
       </div>
       <AppInfo>

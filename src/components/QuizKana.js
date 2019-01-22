@@ -34,19 +34,26 @@ const SettingsLink = styled.button`
   }
 `;
 
-// TODO: customize what can be tested per user
 const QuizKana = props => {
   const [showSettings, setShowSettings] = useState(false);
-  const KANA = hiragana.concat(katakana).sort(() => 0.5 - Math.random());
+
+  const questions = hiragana.concat(katakana).sort(() => 0.5 - Math.random());
 
   return (
     <div>
-      <Quiz questions={KANA} />
+      <Quiz questions={questions} />
       <SettingsLink type="button" onClick={() => setShowSettings(true)}>
         <SettingsIcon />
         <span>Settings</span>
       </SettingsLink>
-      {showSettings && <Settings onClose={() => setShowSettings(false)} />}
+      {showSettings && (
+        <Settings
+          onClose={() => setShowSettings(false)}
+          onSave={settings => {
+            setShowSettings(false);
+          }}
+        />
+      )}
     </div>
   );
 };
