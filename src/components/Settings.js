@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/core';
-import useCookie from 'react-use-cookie';
 import Button from './Button';
 import { ReactComponent as CloseIcon } from '../assets/round-clear-24px.svg';
 
@@ -65,41 +64,19 @@ const AppInfo = styled.div`
   }
 `;
 
-const Text = styled.span`
-  color: ${({ color }) => color};
-`;
-
-const getInitialSettings = () => {
-  // TODO: enable full
-  // return Object.keys(ROWS).reduce((acc, r) => {
-  //   acc[r] = true;
-  //   return acc;
-  // }, {});
-
-  return JSON.stringify({
-    hiragana: true,
-    katakana: true,
-  });
-};
+// const Text = styled.span`
+//   color: ${({ color }) => color};
+// `;
 
 const Settings = props => {
-  const [settings, setSettings] = useCookie('quizKana', getInitialSettings());
-  const settingsObj = JSON.parse(settings);
+  const [hiragana, setHiragana] = useState(props.settings.hiragana || false);
+  const [katakana, setKatakana] = useState(props.settings.katakana || false);
 
-  const handleCheck = key => {
-    setSettings(
-      JSON.stringify({
-        ...settingsObj,
-        [key]: !settingsObj[key],
-      })
-    );
-  };
-
-  const renderRow = r => (
-    <p key={r.key}>
-      <strong>{r.name}</strong> · <Text color="#666">{r.description}</Text>
-    </p>
-  );
+  // const renderRow = r => (
+  //   <p key={r.key}>
+  //     <strong>{r.name}</strong> · <Text color="#666">{r.description}</Text>
+  //   </p>
+  // );
 
   return (
     <Overlay>
@@ -116,8 +93,8 @@ const Settings = props => {
               <OptionCheck
                 name="hiragana"
                 type="checkbox"
-                checked={settingsObj.hiragana}
-                onChange={() => handleCheck('hiragana')}
+                checked={hiragana}
+                onChange={() => setHiragana(!hiragana)}
               />
               Hiragana ひらがな
             </h3>
@@ -127,14 +104,22 @@ const Settings = props => {
               <OptionCheck
                 name="katakana"
                 type="checkbox"
-                checked={settingsObj.katakana}
-                onChange={() => handleCheck('katakana')}
+                checked={katakana}
+                onChange={() => setKatakana(!katakana)}
               />
               Katakana カタカナ
             </h3>
           </div>
         </OptionsForm>
-        <Button type="button" onClick={() => props.onSave(settingsObj)}>
+        <Button
+          type="button"
+          onClick={() =>
+            props.onSave({
+              hiragana,
+              katakana,
+            })
+          }
+        >
           Save
         </Button>
       </div>
