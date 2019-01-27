@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
+import useCookie from 'react-use-cookie';
 import Settings from './Settings';
 import Quiz from './Quiz';
 
@@ -34,19 +35,52 @@ const SettingsLink = styled.button`
   }
 `;
 
-// TODO: customize what can be tested per user
+const getInitialSettings = () => {
+  // TODO: enable full
+  // return Object.keys(ROWS).reduce((acc, r) => {
+  //   acc[r] = true;
+  //   return acc;
+  // }, {});
+
+  return JSON.stringify({
+    hiragana: true,
+    katakana: true,
+  });
+};
+
 const QuizKana = props => {
   const [showSettings, setShowSettings] = useState(false);
-  const KANA = hiragana.concat(katakana).sort(() => 0.5 - Math.random());
+  const [settings, setSettings] = useCookie('quizKana', getInitialSettings());
+  const settingsObj = JSON.parse(settings);
+
+  let chars = [];
+
+  if (settingsObj) {
+    if (settingsObj.hiragana) chars = hiragana;
+    if (settingsObj.katakana) chars = chars.concat(katakana);
+  } else {
+    chars = hiragana.concat(katakana);
+  }
+
+  const questions = chars.sort(() => 0.5 - Math.random());
 
   return (
     <div>
-      <Quiz questions={KANA} />
+      <Quiz questions={questions} />
       <SettingsLink type="button" onClick={() => setShowSettings(true)}>
         <SettingsIcon />
         <span>Settings</span>
       </SettingsLink>
-      {showSettings && <Settings onClose={() => setShowSettings(false)} />}
+      {showSettings && (
+        <Settings
+          settings={settingsObj}
+          onClose={() => setShowSettings(false)}
+          onSave={settings => {
+            setSettings(JSON.stringify(settings));
+            setShowSettings(false);
+          }}
+        />
+      )}
     </div>
   );
 };

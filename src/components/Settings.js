@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import { keyframes } from '@emotion/core';
-import ROWS from '../lib/rows';
 import Button from './Button';
 import { ReactComponent as CloseIcon } from '../assets/round-clear-24px.svg';
 
@@ -44,6 +43,11 @@ const Heading = styled.h1`
 const OptionsForm = styled.form`
   display: flex;
   justify-content: space-between;
+  margin-bottom: 1em;
+`;
+
+const OptionCheck = styled.input`
+  margin-right: 1em;
 `;
 
 const AppInfo = styled.div`
@@ -60,54 +64,77 @@ const AppInfo = styled.div`
   }
 `;
 
-const Text = styled.span`
-  color: ${({ color }) => color};
-`;
+// const Text = styled.span`
+//   color: ${({ color }) => color};
+// `;
 
-class Settings extends Component {
-  render() {
-    const { onClose } = this.props;
+const Settings = props => {
+  const [hiragana, setHiragana] = useState(props.settings.hiragana || false);
+  const [katakana, setKatakana] = useState(props.settings.katakana || false);
 
-    const renderRow = r => (
-      <p key={r.key}>
-        <strong>{r.name}</strong> · <Text color="#666">{r.description}</Text>
-      </p>
-    );
+  // const renderRow = r => (
+  //   <p key={r.key}>
+  //     <strong>{r.name}</strong> · <Text color="#666">{r.description}</Text>
+  //   </p>
+  // );
 
-    return (
-      <Overlay>
-        <div style={{ minWidth: '50%' }}>
-          <Heading>
-            Your settings{' '}
-            <CloseButton type="button" onClick={onClose}>
-              <CloseIcon />
-            </CloseButton>
-          </Heading>
-          <OptionsForm>
-            <div>
-              <h3>Hiragana ひらがな</h3>
-              {Object.values(ROWS).map(r => renderRow(r))}
-            </div>
-            <div>
-              <h3>Katakana カタカナ</h3>
-              {Object.values(ROWS).map(r => renderRow(r))}
-            </div>
-          </OptionsForm>
-          <Button type="submit">Update</Button>
-        </div>
-        <AppInfo>
-          Made by{' '}
-          <a
-            href="https://tylerwolff.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            tw
-          </a>
-        </AppInfo>
-      </Overlay>
-    );
-  }
-}
+  return (
+    <Overlay>
+      <div style={{ minWidth: '50%' }}>
+        <Heading>
+          Your settings{' '}
+          <CloseButton type="button" onClick={props.onClose}>
+            <CloseIcon />
+          </CloseButton>
+        </Heading>
+        <OptionsForm>
+          <div>
+            <h3>
+              <OptionCheck
+                name="hiragana"
+                type="checkbox"
+                checked={hiragana}
+                onChange={() => setHiragana(!hiragana)}
+              />
+              Hiragana ひらがな
+            </h3>
+          </div>
+          <div>
+            <h3>
+              <OptionCheck
+                name="katakana"
+                type="checkbox"
+                checked={katakana}
+                onChange={() => setKatakana(!katakana)}
+              />
+              Katakana カタカナ
+            </h3>
+          </div>
+        </OptionsForm>
+        <Button
+          type="button"
+          onClick={() =>
+            props.onSave({
+              hiragana,
+              katakana,
+            })
+          }
+        >
+          Save
+        </Button>
+      </div>
+      <AppInfo>
+        Made by{' '}
+        <a
+          href="https://tylerwolff.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          tw
+        </a>
+      </AppInfo>
+    </Overlay>
+  );
+};
 
 export default Settings;
