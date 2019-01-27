@@ -8,7 +8,7 @@ export default [
   { character: 'あたらしい', sound: 'new', romaji: 'atarashii' },
   { character: 'ふるい', sound: 'old', romaji: 'furui' },
   { character: 'さむい', sound: 'cold', romaji: 'samui' },
-  { character: 'さむい', sound: 'hot', romaji: 'atsui' },
+  { character: 'あつい', sound: 'hot', romaji: 'atsui' },
   { character: 'かっこいい', sound: 'cool', romaji: 'kakkoii' },
   { character: 'たかい', sound: 'expensive', romaji: 'takai' },
   { character: 'やすい', sound: 'cheap', romaji: 'yasui' },
