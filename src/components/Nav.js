@@ -64,7 +64,7 @@ const Nav = props => {
     <OutsideClickHandler onOutsideClick={() => setShow(false)}>
       <nav>
         <NavToggle onClick={() => setShow(true)}>
-          <NavIcon />
+          <NavIcon /> Quizes
         </NavToggle>
         <NavigationPanel show={show}>
           <h2>Japanese Quizes</h2>
