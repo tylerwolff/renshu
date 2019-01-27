@@ -39,6 +39,15 @@ const NavLink = styled(Link)`
   color: #000;
 `;
 
+const FeedbackLink = styled.a`
+  position: absolute;
+  bottom: 1em;
+  left: 2em;
+  color: #000;
+  font-size: 0.875em;
+  text-decoration: none;
+`;
+
 const Badge = styled.span`
   display: inline-block;
   padding: 0.25em 0.5em;
@@ -78,6 +87,13 @@ const Nav = props => {
               </NavLink>
             </li>
           </Links>
+          <FeedbackLink
+            href="mailto:info@japanese-quiz.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Send feedback
+          </FeedbackLink>
         </NavigationPanel>
       </nav>
     </OutsideClickHandler>
