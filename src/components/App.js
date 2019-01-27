@@ -21,6 +21,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={QuizKana} />
               <Route path="/numbers" component={QuizNumbers} />
+              <Route path="/adjectives" component={QuizNumbers} />
               <Redirect to="/" />
             </Switch>
           </div>
