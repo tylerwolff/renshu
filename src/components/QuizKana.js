@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 import useCookie from 'react-use-cookie';
 import Settings from './Settings';
 import Quiz from './Quiz';
+import QuizIntro from './QuizIntro';
 
 // Character sets
 import hiragana from '../lib/hiragana';
@@ -49,6 +50,7 @@ const getInitialSettings = () => {
 };
 
 const QuizKana = props => {
+  const [startQuiz, setStartQuiz] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
   const [settings, setSettings] = useCookie('quizKana', getInitialSettings());
   const settingsObj = JSON.parse(settings);
@@ -65,23 +67,33 @@ const QuizKana = props => {
   const questions = chars.sort(() => 0.5 - Math.random());
 
   return (
-    <div>
-      <Quiz questions={questions} />
-      <SettingsLink type="button" onClick={() => setShowSettings(true)}>
-        <SettingsIcon />
-        <span>Settings</span>
-      </SettingsLink>
-      {showSettings && (
-        <Settings
-          settings={settingsObj}
-          onClose={() => setShowSettings(false)}
-          onSave={settings => {
-            setSettings(JSON.stringify(settings));
-            setShowSettings(false);
-          }}
+    <>
+      {startQuiz ? (
+        <>
+          <Quiz questions={questions} />
+          <SettingsLink type="button" onClick={() => setShowSettings(true)}>
+            <SettingsIcon />
+            <span>Settings</span>
+          </SettingsLink>
+          {showSettings && (
+            <Settings
+              settings={settingsObj}
+              onClose={() => setShowSettings(false)}
+              onSave={settings => {
+                setSettings(JSON.stringify(settings));
+                setShowSettings(false);
+              }}
+            />
+          )}
+        </>
+      ) : (
+        <QuizIntro
+          name="Hiragana &amp; Katakana"
+          instructions="To complete this quiz, type in the sound or romaji of each character. Focus on your speed and accuracy."
+          onStart={() => setStartQuiz(true)}
         />
       )}
-    </div>
+    </>
   );
 };
 

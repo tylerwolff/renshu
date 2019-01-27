@@ -39,6 +39,15 @@ const NavLink = styled(Link)`
   color: #000;
 `;
 
+const FeedbackLink = styled.a`
+  position: absolute;
+  bottom: 1em;
+  left: 2em;
+  color: #000;
+  font-size: 0.875em;
+  text-decoration: none;
+`;
+
 const Badge = styled.span`
   display: inline-block;
   padding: 0.25em 0.5em;
@@ -55,7 +64,7 @@ const Nav = props => {
     <OutsideClickHandler onOutsideClick={() => setShow(false)}>
       <nav>
         <NavToggle onClick={() => setShow(true)}>
-          <NavIcon />
+          <NavIcon /> Quizes
         </NavToggle>
         <NavigationPanel show={show}>
           <h2>Japanese Quizes</h2>
@@ -68,11 +77,23 @@ const Nav = props => {
             </li>
             <li>
               <NavLink to="/numbers" onClick={() => setShow(false)}>
-                Numbers
+                Kanji - Numbers
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/adjectives" onClick={() => setShow(false)}>
+                Adjectives
                 <Badge>New</Badge>
               </NavLink>
             </li>
           </Links>
+          <FeedbackLink
+            href="mailto:info@japanese-quiz.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Send feedback
+          </FeedbackLink>
         </NavigationPanel>
       </nav>
     </OutsideClickHandler>

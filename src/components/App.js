@@ -10,6 +10,7 @@ import Nav from './Nav';
 // Quizes
 import QuizKana from './QuizKana';
 import QuizNumbers from './QuizNumbers';
+import QuizAdjectives from './QuizAdjectives';
 
 class App extends Component {
   render() {
@@ -21,6 +22,7 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={QuizKana} />
               <Route path="/numbers" component={QuizNumbers} />
+              <Route path="/adjectives" component={QuizAdjectives} />
               <Redirect to="/" />
             </Switch>
           </div>

@@ -28,6 +28,10 @@ const Prompt = styled.h1`
 `;
 
 class Quiz extends Component {
+  static defaultProps = {
+    placeholder: 'Enter sound (romaji)',
+  };
+
   constructor(props) {
     super(props);
 
@@ -38,7 +42,7 @@ class Quiz extends Component {
       initialLength: all.length,
       current: all[0],
       answer: '',
-      inputPlaceholder: '',
+      inputPlaceholder: props.placeholder,
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -68,6 +72,7 @@ class Quiz extends Component {
       initialLength,
       inputPlaceholder,
     } = this.state;
+    const { placeholder } = this.props;
     const progress = ((initialLength - all.length) / initialLength) * 100;
 
     return (
@@ -84,7 +89,7 @@ class Quiz extends Component {
                   onChange={this.handleChange}
                   placeholder={inputPlaceholder}
                   onBlur={() =>
-                    this.setState({ inputPlaceholder: 'Enter sound' })
+                    this.setState({ inputPlaceholder: placeholder })
                   }
                   onFocus={() => this.setState({ inputPlaceholder: '' })}
                   autoFocus={true}
