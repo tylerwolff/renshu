@@ -6,6 +6,8 @@ import Button from './Button';
 import ProgressBar from './ProgressBar';
 import TextInput from './TextInput';
 
+import { ReactComponent as ChevronRight } from '../assets/round-chevron_right-24px.svg';
+
 const Wrapper = styled.div`
   display: flex;
   align-items: center;
@@ -99,7 +101,7 @@ class Quiz extends Component {
               <>
                 <Prompt>すごいよ!</Prompt>
                 <Button onClick={() => window.location.reload()}>
-                  Start again
+                  Start again <ChevronRight />
                 </Button>
               </>
             )}
