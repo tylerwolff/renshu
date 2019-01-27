@@ -26,7 +26,6 @@ export default [
   { character: 'しずか(な)', sound: 'quiet', romaji: 'shizuka' },
   { character: 'にぎやか(な)', sound: 'lively', romaji: 'nigiyaka' },
   { character: 'げんき(な)', sound: 'happy', romaji: 'genki' },
-  { character: 'げんき(な)', sound: 'happy', romaji: 'genki' },
   { character: 'すき(な)', sound: 'like', romaji: 'suki' },
   { character: 'きらい(な)', sound: 'dislike', romaji: 'kirai' },
   { character: 'ひま(な)', sound: 'free', romaji: 'hima' },
