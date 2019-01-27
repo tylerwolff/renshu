@@ -4,15 +4,12 @@ import useCookie from 'react-use-cookie';
 import Settings from './Settings';
 import Quiz from './Quiz';
 import QuizIntro from './QuizIntro';
-import Text from './Text';
-import Button from './Button';
 
 // Character sets
 import hiragana from '../lib/hiragana';
 import katakana from '../lib/katakana';
 
 import { ReactComponent as SettingsIcon } from '../assets/round-settings-24px.svg';
-import { ReactComponent as ChevronRight } from '../assets/round-chevron_right-24px.svg';
 
 const SettingsLink = styled.button`
   position: absolute;
@@ -90,16 +87,11 @@ const QuizKana = props => {
           )}
         </>
       ) : (
-        <QuizIntro>
-          <h1>Hiragana &amp; Katakana</h1>
-          <Text margin="0 0 2rem">
-            To complete this quiz, type in the sound or romaji of each
-            character. Focus on your speed and accuracy.
-          </Text>
-          <Button onClick={() => setStartQuiz(true)}>
-            Start quiz <ChevronRight />
-          </Button>
-        </QuizIntro>
+        <QuizIntro
+          name="Hiragana &amp; Katakana"
+          instructions="To complete this quiz, type in the sound or romaji of each character. Focus on your speed and accuracy."
+          onStart={() => setStartQuiz(true)}
+        />
       )}
     </>
   );

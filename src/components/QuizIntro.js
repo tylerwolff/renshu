@@ -1,5 +1,8 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import Text from './Text';
+import Button from './Button';
+import { ReactComponent as ChevronRight } from '../assets/round-chevron_right-24px.svg';
 
 const Wrapper = styled.div`
   display: flex;
@@ -17,9 +20,18 @@ const TextCenter = styled.div`
 `;
 
 const QuizIntro = props => {
+  const { name, instructions, onStart } = props;
+
   return (
     <Wrapper>
-      <TextCenter>{props.children}</TextCenter>
+      <TextCenter>
+        <h1>{name}</h1>
+        <Text margin="0 0 2rem">{instructions}</Text>
+        {props.children}
+        <Button onClick={onStart}>
+          Start quiz <ChevronRight />
+        </Button>
+      </TextCenter>
     </Wrapper>
   );
 };
