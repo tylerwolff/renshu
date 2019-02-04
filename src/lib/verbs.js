@@ -1,5 +1,23 @@
 // prettier-ignore
-export default [
+export const verbs = [
+  { japanese: 'たべる', romaji: 'taberu', english: 'to eat', matches: /eat/ },
+  { japanese: 'のむ', romaji: 'nomu', english: 'to drink', matches: /drink/ },
+  { japanese: 'わかる', romaji: 'wakaru', english: 'to understand', matches: /understand/ },
+  { japanese: 'みる', romaji: 'miru', english: 'to see', matches: /see|watch|look/ },
+  { japanese: 'ねる', romaji: 'neru', english: 'to sleep', matches: /sleep/ },
+  { japanese: 'おきる', romaji: 'okiru', english: 'to wake up', matches: /wake|occur/ },
+  { japanese: 'きる', romaji: 'kiru', english: 'to wear', matches: /wear/ },
+  { japanese: 'はなす', romaji: 'hanasu', english: 'to speak', matches: /speak|say/ },
+  { japanese: 'きく', romaji: 'kiku', english: 'to ask/listen', matches: /listen|ask/ },
+  { japanese: 'およぐ', romaji: 'oyogu', english: 'to swim', matches: /swim/ },
+  { japanese: 'まつ', romaji: 'matsu', english: 'to wait', matches: /wait/ },
+  { japanese: 'かう', romaji: 'kau', english: 'to buy', matches: /buy/ },
+  { japanese: 'くる', romaji: 'kuru', english: 'to come', matches: /come/ },
+  { japanese: 'かえる', romaji: 'kaeru', english: 'to return home', matches: /(go home)|(return home)/ },
+];
+
+// prettier-ignore
+export const verbs2 = [
   { japanese: 'あける', romaji: 'akeru', english: 'to open', matches: /open/ },
   { japanese: 'おしえる', romaji: 'oshieru', english: 'to teach', matches: /teach/ },
   { japanese: 'おりる', romaji: 'oriru', english: 'to get off', matches: /get off/ },

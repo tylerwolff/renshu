@@ -12,6 +12,7 @@ import QuizKana from './QuizKana';
 import QuizNumbers from './QuizNumbers';
 import QuizAdjectives from './QuizAdjectives';
 import QuizVerbs from './QuizVerbs';
+import QuizVerbsMore from './QuizVerbsMore';
 
 class App extends Component {
   render() {
@@ -25,6 +26,7 @@ class App extends Component {
               <Route path="/numbers" component={QuizNumbers} />
               <Route path="/adjectives" component={QuizAdjectives} />
               <Route path="/verbs" component={QuizVerbs} />
+              <Route path="/verbs-more" component={QuizVerbsMore} />
               <Redirect to="/" />
             </Switch>
           </div>

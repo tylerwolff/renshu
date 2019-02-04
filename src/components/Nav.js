@@ -87,7 +87,13 @@ const Nav = props => {
             </li>
             <li>
               <NavLink to="/verbs" onClick={() => setShow(false)}>
-                Verbs
+                Verbs - Basics
+                <Badge>New</Badge>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/verbs-more" onClick={() => setShow(false)}>
+                Verbs - More
                 <Badge>New</Badge>
               </NavLink>
             </li>
