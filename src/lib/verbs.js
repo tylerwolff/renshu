@@ -1,0 +1,22 @@
+// prettier-ignore
+export default [
+  { japanese: 'あける', romaji: 'akeru', english: 'to open', matches: /open/ },
+  { japanese: 'おしえる', romaji: 'oshieru', english: 'to teach', matches: /teach/ },
+  { japanese: 'おりる', romaji: 'oriru', english: 'to get off', matches: /get off/ },
+  { japanese: 'かりる', romaji: 'kariru', english: 'to borrow', matches: /borrow/ },
+  { japanese: 'しめる', romaji: 'shimeru', english: 'to close', matches: /close/ },
+  { japanese: 'つける', romaji: 'tsukeru', english: 'to put on', matches: /(put on)|(turn on)/ },
+  { japanese: 'わすれる', romaji: 'wasureru', english: 'to forget', matches: /forget/ },
+  { japanese: 'つかう', romaji: 'tsukau', english: 'to use', matches: /use/ },
+  { japanese: 'てつだう', romaji: 'tetsudau', english: 'to help', matches: /help/ },
+  { japanese: 'いそぐ', romaji: 'isogu', english: 'to hurry', matches: /hurry/ },
+  { japanese: 'かえす', romaji: 'kaesu', english: 'to return', matches: /return/ },
+  { japanese: 'けす', romaji: 'kesu', english: 'to turn off', matches: /turn off/ },
+  { japanese: 'たつ', romaji: 'tatsu', english: 'to stand up', matches: /(stand up)|rise/ },
+  { japanese: 'はこぶ', romaji: 'hakobu', english: 'to carry', matches: /carry/ },
+  { japanese: 'しぬ', romaji: 'shinu', english: 'to die', matches: /die/ },
+  { japanese: 'あそぶ', romaji: 'asobu', english: 'to play', matches: /play/ },
+  { japanese: 'やすむ', romaji: 'yasumu', english: 'to be absent', matches: /absent|rest/ },
+  { japanese: 'すわる', romaji: 'suwaru', english: 'to sit', matches: /sit/ },
+  { japanese: 'はいる', romaji: 'hairu', english: 'to enter', matches: /enter/ },
+];
