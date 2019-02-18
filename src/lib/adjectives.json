@@ -1,0 +1,166 @@
+{
+  "vocabulary": [
+    {
+      "hiragana": "おおきい",
+      "romaji": "ookii",
+      "english": "big",
+      "matches": "big|large"
+    },
+    {
+      "hiragana": "ちいさい",
+      "romaji": "chiisai",
+      "english": "small",
+      "matches": "small|little"
+    },
+    {
+      "hiragana": "いい",
+      "romaji": "ii",
+      "english": "good",
+      "matches": "good"
+    },
+    {
+      "hiragana": "わるい",
+      "romaji": "warui",
+      "english": "bad",
+      "matches": "bad"
+    },
+    {
+      "hiragana": "すごい",
+      "romaji": "sugoi",
+      "english": "great",
+      "matches": "great|amazing|good"
+    },
+    {
+      "hiragana": "あたらしい",
+      "romaji": "atarashii",
+      "english": "new",
+      "matches": "new"
+    },
+    {
+      "hiragana": "ふるい",
+      "romaji": "furui",
+      "english": "old",
+      "matches": "old"
+    },
+    {
+      "hiragana": "さむい",
+      "romaji": "samui",
+      "english": "cold",
+      "matches": "cold"
+    },
+    {
+      "hiragana": "あつい",
+      "romaji": "atsui",
+      "english": "hot",
+      "matches": "hot"
+    },
+    {
+      "hiragana": "かっこいい",
+      "romaji": "kakkoii",
+      "english": "cool",
+      "matches": "cool"
+    },
+    {
+      "hiragana": "たかい",
+      "romaji": "takai",
+      "english": "expensive",
+      "matches": "expensive"
+    },
+    {
+      "hiragana": "やすい",
+      "romaji": "yasui",
+      "english": "cheap",
+      "matches": "cheap"
+    },
+    {
+      "hiragana": "きたない",
+      "romaji": "kitanai",
+      "english": "dirty",
+      "matches": "dirty"
+    },
+    {
+      "hiragana": "たのしい",
+      "romaji": "tanoshii",
+      "english": "fun",
+      "matches": "fun"
+    },
+    {
+      "hiragana": "つまらない",
+      "romaji": "tsumaranai",
+      "english": "boring",
+      "matches": "boring"
+    },
+    {
+      "hiragana": "やさしい",
+      "romaji": "yasashii",
+      "english": "easy",
+      "matches": "easy"
+    },
+    {
+      "hiragana": "むずかしい",
+      "romaji": "muzukashii",
+      "english": "dificult",
+      "matches": "dificult"
+    },
+    {
+      "hiragana": "おもしろい",
+      "romaji": "omoshiroi",
+      "english": "interesting",
+      "matches": "interesting"
+    },
+    {
+      "hiragana": "いそがしい",
+      "romaji": "isogashii",
+      "english": "busy",
+      "matches": "busy"
+    },
+    {
+      "hiragana": "こわい",
+      "romaji": "kowai",
+      "english": "scary",
+      "matches": "scary"
+    },
+    {
+      "hiragana": "きれい(な)",
+      "romaji": "kirei",
+      "english": "pretty",
+      "matches": "pretty"
+    },
+    {
+      "hiragana": "しずか(な)",
+      "romaji": "shizuka",
+      "english": "quiet",
+      "matches": "quiet"
+    },
+    {
+      "hiragana": "にぎやか(な)",
+      "romaji": "nigiyaka",
+      "english": "lively",
+      "matches": "lively"
+    },
+    {
+      "hiragana": "げんき(な)",
+      "romaji": "genki",
+      "english": "happy",
+      "matches": "happy"
+    },
+    {
+      "hiragana": "すき(な)",
+      "romaji": "suki",
+      "english": "like",
+      "matches": "like"
+    },
+    {
+      "hiragana": "きらい(な)",
+      "romaji": "kirai",
+      "english": "dislike",
+      "matches": "dislike"
+    },
+    {
+      "hiragana": "ひま(な)",
+      "romaji": "hima",
+      "english": "free",
+      "matches": "free"
+    }
+  ]
+}
