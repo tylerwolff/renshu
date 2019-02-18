@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import styled from '@emotion/styled';
 import useCookie from 'react-use-cookie';
-import Quiz from './Quiz';
-import QuizIntro from './QuizIntro';
+import Quiz from '../Quiz';
+import QuizIntro from '../QuizIntro';
 
 // Character sets
-import hiragana from '../lib/hiragana';
-import katakana from '../lib/katakana';
+import hiragana from '../../lib/hiragana';
+import katakana from '../../lib/katakana';
 
 const OptionsForm = styled.form`
   margin-bottom: 1em;

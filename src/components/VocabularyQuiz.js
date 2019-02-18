@@ -24,7 +24,7 @@ const Content = styled.div`
 
 const Prompt = styled.h1`
   margin: 0 0 1rem 0;
-  font-size: 5rem;
+  font-size: 8rem;
   line-height: 1;
   text-align: center;
 `;
@@ -37,7 +37,7 @@ const Hint = styled.p`
 class VocabularyQuiz extends Component {
   static defaultProps = {
     placeholder: 'Enter English meaning',
-    question: 'japanese',
+    question: 'hiragana',
     hint: 'romaji',
   };
 

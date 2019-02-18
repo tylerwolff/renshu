@@ -8,12 +8,12 @@ import {
 import Nav from './Nav';
 
 // Quizes
-import QuizKana from './QuizKana';
-import QuizNumbers from './QuizNumbers';
-import QuizAdjectives from './QuizAdjectives';
-import QuizVerbs from './QuizVerbs';
-import QuizVerbsMore from './QuizVerbsMore';
-import KanjiWeekdays from './KanjiWeekdays';
+import QuizKana from './quizes/QuizKana';
+import QuizAdjectives from './quizes/QuizAdjectives';
+import QuizVerbs from './quizes/QuizVerbs';
+import QuizVerbsMore from './quizes/QuizVerbsMore';
+import KanjiNumbers from './quizes/KanjiNumbers';
+import KanjiWeekdays from './quizes/KanjiWeekdays';
 
 class App extends Component {
   render() {
@@ -24,7 +24,7 @@ class App extends Component {
             <Nav />
             <Switch>
               <Route exact path="/" component={QuizKana} />
-              <Route path="/numbers" component={QuizNumbers} />
+              <Route path="/numbers" component={KanjiNumbers} />
               <Route path="/adjectives" component={QuizAdjectives} />
               <Route path="/verbs" component={QuizVerbs} />
               <Route path="/verbs-more" component={QuizVerbsMore} />

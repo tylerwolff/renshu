@@ -76,11 +76,6 @@ const Nav = props => {
               </NavLink>
             </li>
             <li>
-              <NavLink to="/numbers" onClick={() => setShow(false)}>
-                Kanji - Numbers
-              </NavLink>
-            </li>
-            <li>
               <NavLink to="/adjectives" onClick={() => setShow(false)}>
                 Adjectives
               </NavLink>
@@ -93,6 +88,11 @@ const Nav = props => {
             <li>
               <NavLink to="/verbs-more" onClick={() => setShow(false)}>
                 Verbs - More
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/numbers" onClick={() => setShow(false)}>
+                Kanji - Numbers
               </NavLink>
             </li>
             <li>
