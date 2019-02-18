@@ -13,6 +13,7 @@ import QuizNumbers from './QuizNumbers';
 import QuizAdjectives from './QuizAdjectives';
 import QuizVerbs from './QuizVerbs';
 import QuizVerbsMore from './QuizVerbsMore';
+import KanjiWeekdays from './KanjiWeekdays';
 
 class App extends Component {
   render() {
@@ -27,6 +28,7 @@ class App extends Component {
               <Route path="/adjectives" component={QuizAdjectives} />
               <Route path="/verbs" component={QuizVerbs} />
               <Route path="/verbs-more" component={QuizVerbsMore} />
+              <Route path="/kanji-weekdays" component={KanjiWeekdays} />
               <Redirect to="/" />
             </Switch>
           </div>

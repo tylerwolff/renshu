@@ -58,8 +58,9 @@ class VocabularyQuiz extends Component {
   handleChange(e) {
     const val = e.target.value.toLowerCase();
     const { currentWord } = this.state;
+    const pattern = new RegExp(currentWord.matches);
 
-    if (val.match(currentWord.matches)) {
+    if (pattern.test(val)) {
       const remainingCharacters = this.state.words.slice(1);
       return this.setState({
         words: remainingCharacters,
