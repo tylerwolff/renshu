@@ -1,49 +1,49 @@
 {
   "vocabulary": [
     {
-      "japanese": "月曜日",
+      "kanji": "月曜日",
       "hiragana": "げつようび",
       "romaji": "getsuyōbi",
       "english": "monday",
       "matches": "monday"
     },
     {
-      "japanese": "火曜日",
+      "kanji": "火曜日",
       "hiragana": "かようび",
       "romaji": "kayōbi",
       "english": "tuesday",
       "matches": "tuesday"
     },
     {
-      "japanese": "水曜日",
+      "kanji": "水曜日",
       "hiragana": "すいようび",
       "romaji": "suiyōbi",
       "english": "wednesday",
       "matches": "wednesday"
     },
     {
-      "japanese": "木曜日",
+      "kanji": "木曜日",
       "hiragana": "もくようび",
       "romaji": "mokuyōbi",
       "english": "thursday",
       "matches": "thursday"
     },
     {
-      "japanese": "金曜日",
+      "kanji": "金曜日",
       "hiragana": "きんようび",
       "romaji": "kinyōbi",
       "english": "friday",
       "matches": "friday"
     },
     {
-      "japanese": "土曜日",
+      "kanji": "土曜日",
       "hiragana": "どようび",
       "romaji": "doyōbi",
       "english": "saturday",
       "matches": "saturday"
     },
     {
-      "japanese": "日曜日",
+      "kanji": "日曜日",
       "hiragana": "にちようび",
       "romaji": "nichiyōbi",
       "english": "sunday",

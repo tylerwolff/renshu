@@ -37,6 +37,7 @@ const Hint = styled.p`
 class VocabularyQuiz extends Component {
   static defaultProps = {
     placeholder: 'Enter English meaning',
+    question: 'japanese',
     hint: 'romaji',
   };
 
@@ -81,7 +82,7 @@ class VocabularyQuiz extends Component {
       initialLength,
       inputPlaceholder,
     } = this.state;
-    const { placeholder, hint } = this.props;
+    const { placeholder, question, hint } = this.props;
     const progress = ((initialLength - words.length) / initialLength) * 100;
 
     return (
@@ -91,7 +92,7 @@ class VocabularyQuiz extends Component {
           <Content>
             {currentWord ? (
               <>
-                <Prompt>{currentWord.japanese}</Prompt>
+                <Prompt>{currentWord[question]}</Prompt>
                 <Hint>{currentWord[hint]}</Hint>
                 <TextInput
                   type="text"

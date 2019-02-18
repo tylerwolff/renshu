@@ -8,13 +8,14 @@ const QuizNumbers = props => {
   const vocabulary = weekdays.vocabulary
     .slice(0)
     .sort(() => 0.5 - Math.random());
-  console.log(weekdays.vocabulary);
+
   return (
     <>
       {startQuiz ? (
         <VocabularyQuiz
           words={vocabulary}
           placeholder="Enter english translation"
+          question="kanji"
           hint="hiragana"
         />
       ) : (
