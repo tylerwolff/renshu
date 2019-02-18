@@ -37,7 +37,7 @@ const Hint = styled.p`
 class VocabularyQuiz extends Component {
   static defaultProps = {
     placeholder: 'Enter English meaning',
-    question: 'japanese',
+    question: 'hiragana',
     hint: 'romaji',
   };
 

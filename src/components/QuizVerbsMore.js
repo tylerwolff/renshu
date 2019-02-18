@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import QuizIntro from './QuizIntro';
 import VocabularyQuiz from './VocabularyQuiz';
-import { verbs2 } from '../lib/verbs';
+import { basic_more } from '../lib/verbs';
 
 const QuizVerbsMore = props => {
   const [startQuiz, setStartQuiz] = useState(false);
-  const words = verbs2.sort(() => 0.5 - Math.random());
+  const words = basic_more.sort(() => 0.5 - Math.random());
 
   return (
     <>
