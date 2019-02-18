@@ -1,0 +1,46 @@
+{
+  "weekdays": [
+    {
+      "japanese": "月曜日",
+      "romaji": "getsuyoubi",
+      "english": "monday",
+      "matches": /monday/
+    },
+    {
+      "japanese": "火曜日",
+      "romaji": "kayoubi",
+      "english": "tuesday",
+      "matches": /tuesday/
+    },
+    {
+      "japanese": "水曜日",
+      "romaji": "suiyoubi",
+      "english": "wednesday",
+      "matches": /wednesday/
+    },
+    {
+      "japanese": "木曜日",
+      "romaji": "mokuyoubi",
+      "english": "thursday",
+      "matches": /thursday/
+    },
+    {
+      "japanese": "金曜日",
+      "romaji": "kinyoubi",
+      "english": "friday",
+      "matches": /friday/
+    },
+    {
+      "japanese": "土曜日",
+      "romaji": "doyoubi",
+      "english": "saturday",
+      "matches": /saturday/
+    },
+    {
+      "japanese": "日曜日",
+      "romaji": "nichiyoubi",
+      "english": "sunday",
+      "matches": /sunday/
+    }
+  ]
+}
