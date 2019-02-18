@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import VocabularyQuiz from '../VocabularyQuiz';
 import QuizIntro from '../QuizIntro';
+import Text from '../Text';
 import weekdays from '../../lib/weekdays';
 
 const QuizNumbers = props => {
@@ -23,7 +24,17 @@ const QuizNumbers = props => {
           name="Kanji - Weekdays"
           instructions="To complete this quiz, type in the English weekday corresponding to each japanese word."
           onStart={() => setStartQuiz(true)}
-        />
+        >
+          <Text>
+            <a
+              href="https://nipponrama.com/days-week-japanese/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Learn more
+            </a>
+          </Text>
+        </QuizIntro>
       )}
     </>
   );
