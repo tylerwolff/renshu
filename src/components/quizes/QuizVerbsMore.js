@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import QuizIntro from './QuizIntro';
-import VocabularyQuiz from './VocabularyQuiz';
-import { basic_more } from '../lib/verbs';
+import QuizIntro from '../QuizIntro';
+import VocabularyQuiz from '../VocabularyQuiz';
+import { basic_more } from '../../lib/verbs';
 
 const QuizVerbsMore = props => {
   const [startQuiz, setStartQuiz] = useState(false);

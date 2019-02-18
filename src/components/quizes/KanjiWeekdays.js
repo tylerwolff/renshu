@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import VocabularyQuiz from './VocabularyQuiz';
-import QuizIntro from './QuizIntro';
-import weekdays from '../lib/weekdays';
+import VocabularyQuiz from '../VocabularyQuiz';
+import QuizIntro from '../QuizIntro';
+import weekdays from '../../lib/weekdays';
 
 const QuizNumbers = props => {
   const [startQuiz, setStartQuiz] = useState(false);

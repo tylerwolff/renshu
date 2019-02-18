@@ -8,12 +8,12 @@ import {
 import Nav from './Nav';
 
 // Quizes
-import QuizKana from './QuizKana';
-import QuizAdjectives from './QuizAdjectives';
-import QuizVerbs from './QuizVerbs';
-import QuizVerbsMore from './QuizVerbsMore';
-import KanjiNumbers from './KanjiNumbers';
-import KanjiWeekdays from './KanjiWeekdays';
+import QuizKana from './quizes/QuizKana';
+import QuizAdjectives from './quizes/QuizAdjectives';
+import QuizVerbs from './quizes/QuizVerbs';
+import QuizVerbsMore from './quizes/QuizVerbsMore';
+import KanjiNumbers from './quizes/KanjiNumbers';
+import KanjiWeekdays from './quizes/KanjiWeekdays';
 
 class App extends Component {
   render() {

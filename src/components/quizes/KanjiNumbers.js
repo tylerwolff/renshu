@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import Quiz from './Quiz';
-import QuizIntro from './QuizIntro';
-import numbers from '../lib/numbers';
+import Quiz from '../Quiz';
+import QuizIntro from '../QuizIntro';
+import numbers from '../../lib/numbers';
 
 const QuizNumbers = props => {
   const [startQuiz, setStartQuiz] = useState(false);
