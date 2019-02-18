@@ -2,45 +2,53 @@
   "vocabulary": [
     {
       "japanese": "月曜日",
-      "romaji": "getsuyoubi",
+      "hiragana": "げつようび",
+      "romaji": "getsuyōbi",
       "english": "monday",
       "matches": "monday"
     },
     {
       "japanese": "火曜日",
-      "romaji": "kayoubi",
+      "hiragana": "かようび",
+      "romaji": "kayōbi",
       "english": "tuesday",
       "matches": "tuesday"
     },
     {
       "japanese": "水曜日",
-      "romaji": "suiyoubi",
+      "hiragana": "すいようび",
+      "romaji": "suiyōbi",
       "english": "wednesday",
       "matches": "wednesday"
     },
     {
       "japanese": "木曜日",
-      "romaji": "mokuyoubi",
+      "hiragana": "もくようび",
+      "romaji": "mokuyōbi",
       "english": "thursday",
       "matches": "thursday"
     },
     {
       "japanese": "金曜日",
-      "romaji": "kinyoubi",
+      "hiragana": "きんようび",
+      "romaji": "kinyōbi",
       "english": "friday",
       "matches": "friday"
     },
     {
       "japanese": "土曜日",
-      "romaji": "doyoubi",
+      "hiragana": "どようび",
+      "romaji": "doyōbi",
       "english": "saturday",
       "matches": "saturday"
     },
     {
       "japanese": "日曜日",
-      "romaji": "nichiyoubi",
+      "hiragana": "にちようび",
+      "romaji": "nichiyōbi",
       "english": "sunday",
       "matches": "sunday"
     }
-  ]
+  ],
+  "resources": ["https://nipponrama.com/days-week-japanese/"]
 }

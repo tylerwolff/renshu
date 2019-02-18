@@ -15,6 +15,7 @@ const QuizNumbers = props => {
         <VocabularyQuiz
           words={vocabulary}
           placeholder="Enter english translation"
+          hint="hiragana"
         />
       ) : (
         <QuizIntro
