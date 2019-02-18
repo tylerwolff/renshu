@@ -88,12 +88,16 @@ const Nav = props => {
             <li>
               <NavLink to="/verbs" onClick={() => setShow(false)}>
                 Verbs - Basics
-                <Badge>New</Badge>
               </NavLink>
             </li>
             <li>
               <NavLink to="/verbs-more" onClick={() => setShow(false)}>
                 Verbs - More
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/kanji-weekdays" onClick={() => setShow(false)}>
+                Kanji - Weekdays
                 <Badge>New</Badge>
               </NavLink>
             </li>
