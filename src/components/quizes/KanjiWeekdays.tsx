@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import VocabularyQuiz from '../VocabularyQuiz';
 import QuizIntro from '../QuizIntro';
 import Text from '../Text';
-import weekdays from '../../lib/weekdays';
+import weekdays from '../../lib/weekdays.json';
 
-const QuizNumbers = props => {
+const QuizNumbers = (props: any) => {
   const [startQuiz, setStartQuiz] = useState(false);
   const vocabulary = weekdays.vocabulary
     .slice(0)
