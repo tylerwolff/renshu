@@ -13,7 +13,11 @@ const NavToggle = styled.button`
   cursor: pointer;
 `;
 
-const NavigationPanel = styled.div`
+interface NavigationPanelProps {
+  readonly show: boolean;
+}
+
+const NavigationPanel = styled.div<NavigationPanelProps>`
   position: absolute;
   top: 0;
   left: 0;
@@ -48,7 +52,7 @@ const FeedbackLink = styled.a`
   text-decoration: none;
 `;
 
-const Nav = props => {
+const Nav = () => {
   const [show, setShow] = useState(false);
 
   return (

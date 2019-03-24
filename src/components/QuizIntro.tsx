@@ -18,7 +18,14 @@ const TextCenter = styled.div`
   text-align: center;
 `;
 
-const QuizIntro = props => {
+interface QuizIntroProps {
+  name: string;
+  instructions: string | JSX.Element;
+  children?: JSX.Element[] | JSX.Element;
+  onStart(MouseEvent: any): void;
+}
+
+const QuizIntro = (props: QuizIntroProps) => {
   const { name, instructions, onStart } = props;
 
   return (
