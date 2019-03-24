@@ -4,7 +4,7 @@ import QuizIntro from '../QuizIntro';
 import VocabularyQuiz from '../VocabularyQuiz';
 import { basic } from '../../lib/verbs.json';
 
-const Verbs = (props: any) => {
+const Verbs = () => {
   const [startQuiz, setStartQuiz] = useState(false);
   const words = basic.sort(() => 0.5 - Math.random());
 

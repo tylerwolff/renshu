@@ -4,7 +4,7 @@ import VocabularyQuiz from '../VocabularyQuiz';
 import QuizIntro from '../QuizIntro';
 import adjectives from '../../lib/adjectives.json';
 
-const Adjectives = (props: any) => {
+const Adjectives = () => {
   const [startQuiz, setStartQuiz] = useState(false);
   const randomizedAdjectives = adjectives.vocabulary.sort(
     () => 0.5 - Math.random()

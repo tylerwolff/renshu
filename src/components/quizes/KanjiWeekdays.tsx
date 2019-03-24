@@ -5,7 +5,7 @@ import QuizIntro from '../QuizIntro';
 import { Text } from '../ui';
 import weekdays from '../../lib/weekdays.json';
 
-const QuizNumbers = (props: any) => {
+const QuizNumbers = () => {
   const [startQuiz, setStartQuiz] = useState(false);
   const vocabulary = weekdays.vocabulary
     .slice(0)
