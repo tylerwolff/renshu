@@ -2,10 +2,7 @@ import React, { Component } from 'react';
 import styled from '@emotion/styled';
 
 // UI elements
-import Button from './Button';
-import ProgressBar from './ProgressBar';
-import TextInput from './TextInput';
-
+import { Button, ProgressBar, TextInput } from './ui';
 import { ReactComponent as ChevronRight } from '../assets/round-chevron_right-24px.svg';
 
 const Wrapper = styled.div`

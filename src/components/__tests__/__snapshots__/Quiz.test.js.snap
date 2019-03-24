@@ -18,11 +18,11 @@ Array [
       </h1>
       <input
         autoFocus={true}
-        className="css-pr63pg"
+        className="css-1citbvd"
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
-        placeholder=""
+        placeholder="Enter sound (romaji)"
         type="text"
         value=""
       />

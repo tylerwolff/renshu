@@ -30,7 +30,7 @@ const getInitialSettings = () => {
   });
 };
 
-const QuizKana = props => {
+const Kana = props => {
   const [startQuiz, setStartQuiz] = useState(false);
   const [settings, setSettings] = useCookie('quizKana', getInitialSettings());
   const settingsObj = JSON.parse(settings);
@@ -103,4 +103,4 @@ const QuizKana = props => {
   );
 };
 
-export default QuizKana;
+export default Kana;

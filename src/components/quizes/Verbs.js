@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import QuizIntro from '../QuizIntro';
 import VocabularyQuiz from '../VocabularyQuiz';
-import { basic_more } from '../../lib/verbs';
+import { basic } from '../../lib/verbs';
 
-const QuizVerbsMore = props => {
+const Verbs = props => {
   const [startQuiz, setStartQuiz] = useState(false);
-  const words = basic_more.sort(() => 0.5 - Math.random());
+  const words = basic.sort(() => 0.5 - Math.random());
 
   return (
     <>
@@ -13,7 +13,7 @@ const QuizVerbsMore = props => {
         <VocabularyQuiz words={words} placeholder="Enter english translation" />
       ) : (
         <QuizIntro
-          name="Verbs - More"
+          name="Verbs - Basics"
           instructions="To complete this quiz, type in the English translation of each verb."
           onStart={() => setStartQuiz(true)}
         />
@@ -22,4 +22,4 @@ const QuizVerbsMore = props => {
   );
 };
 
-export default QuizVerbsMore;
+export default Verbs;

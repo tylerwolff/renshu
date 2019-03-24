@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import VocabularyQuiz from '../VocabularyQuiz';
 import QuizIntro from '../QuizIntro';
-import Text from '../Text';
+import { Text } from '../ui';
 import weekdays from '../../lib/weekdays';
 
 const QuizNumbers = props => {
