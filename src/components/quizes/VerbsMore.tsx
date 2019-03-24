@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Helmet } from 'react-helmet';
 import QuizIntro from '../QuizIntro';
 import VocabularyQuiz from '../VocabularyQuiz';
-import { basic_more } from '../../lib/verbs';
+import { basic_more } from '../../lib/verbs.json';
 
-const VerbsMore = props => {
+const VerbsMore = (props: any) => {
   const [startQuiz, setStartQuiz] = useState(false);
   const words = basic_more.sort(() => 0.5 - Math.random());
 
