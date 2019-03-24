@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import VocabularyQuiz from '../VocabularyQuiz';
 import QuizIntro from '../QuizIntro';
 import { Text } from '../ui';
@@ -12,6 +13,9 @@ const QuizNumbers = props => {
 
   return (
     <>
+      <Helmet>
+        <title>Kanji weekdays - Japanese Quiz</title>
+      </Helmet>
       {startQuiz ? (
         <VocabularyQuiz
           words={vocabulary}

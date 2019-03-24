@@ -98,7 +98,6 @@ const Nav = props => {
             <li>
               <NavLink to="/kanji-weekdays" onClick={() => setShow(false)}>
                 Kanji - Weekdays
-                <Badge>New</Badge>
               </NavLink>
             </li>
           </Links>

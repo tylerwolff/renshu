@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import styled from '@emotion/styled';
 import useCookie from 'react-use-cookie';
 import Quiz from '../Quiz';
@@ -57,6 +58,9 @@ const Kana = props => {
 
   return (
     <>
+      <Helmet>
+        <title>Japanese Quiz - Daily Kana Practice</title>
+      </Helmet>
       {startQuiz ? (
         <Quiz questions={questions} />
       ) : (
