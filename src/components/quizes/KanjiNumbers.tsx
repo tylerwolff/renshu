@@ -4,7 +4,7 @@ import Quiz from '../Quiz';
 import QuizIntro from '../QuizIntro';
 import numbers from '../../lib/numbers';
 
-const QuizNumbers = props => {
+const QuizNumbers = (props: any) => {
   const [startQuiz, setStartQuiz] = useState(false);
   const randomizedNumbers = numbers.sort(() => 0.5 - Math.random());
 
