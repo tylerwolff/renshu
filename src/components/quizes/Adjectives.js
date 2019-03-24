@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import VocabularyQuiz from '../VocabularyQuiz';
 import QuizIntro from '../QuizIntro';
 import adjectives from '../../lib/adjectives';
@@ -11,6 +12,9 @@ const Adjectives = props => {
 
   return (
     <>
+      <Helmet>
+        <title>Adjectives - Japanese Quiz</title>
+      </Helmet>
       {startQuiz ? (
         <VocabularyQuiz
           words={randomizedAdjectives}

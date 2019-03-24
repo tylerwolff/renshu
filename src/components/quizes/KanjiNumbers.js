@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet';
 import Quiz from '../Quiz';
 import QuizIntro from '../QuizIntro';
 import numbers from '../../lib/numbers';
@@ -9,6 +10,9 @@ const QuizNumbers = props => {
 
   return (
     <>
+      <Helmet>
+        <title>Kanji numbers - Japanese Quiz</title>
+      </Helmet>
       {startQuiz ? (
         <Quiz
           questions={randomizedNumbers}
