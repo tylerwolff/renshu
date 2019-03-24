@@ -31,7 +31,7 @@ const getInitialSettings = () => {
   });
 };
 
-const Kana = props => {
+const Kana = (props: any) => {
   const [startQuiz, setStartQuiz] = useState(false);
   const [settings, setSettings] = useCookie('quizKana', getInitialSettings());
   const settingsObj = JSON.parse(settings);
