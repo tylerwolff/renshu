@@ -13,7 +13,11 @@ const NavToggle = styled.button`
   cursor: pointer;
 `;
 
-const NavigationPanel = styled.div`
+interface NavigationPanelProps {
+  readonly show: boolean;
+}
+
+const NavigationPanel = styled.div<NavigationPanelProps>`
   position: absolute;
   top: 0;
   left: 0;
@@ -48,16 +52,7 @@ const FeedbackLink = styled.a`
   text-decoration: none;
 `;
 
-const Badge = styled.span`
-  display: inline-block;
-  padding: 0.25em 0.5em;
-  margin-left: 0.5em;
-  background: #d1c4e9;
-  font-size: 0.75em;
-  border-radius: 2px;
-`;
-
-const Nav = props => {
+const Nav = () => {
   const [show, setShow] = useState(false);
 
   return (

@@ -9,6 +9,11 @@ import QuizIntro from '../QuizIntro';
 import hiragana from '../../lib/hiragana';
 import katakana from '../../lib/katakana';
 
+interface SettingObject {
+  hiragana?: boolean;
+  katakana?: boolean;
+}
+
 const OptionsForm = styled.form`
   margin-bottom: 1em;
 `;
@@ -18,7 +23,7 @@ const OptionCheck = styled.input`
   margin-bottom: 1em;
 `;
 
-const getInitialSettings = () => {
+const getInitialSettings = (): string => {
   // TODO: enable full
   // return Object.keys(ROWS).reduce((acc, r) => {
   //   acc[r] = true;
@@ -31,12 +36,12 @@ const getInitialSettings = () => {
   });
 };
 
-const Kana = props => {
+const Kana = () => {
   const [startQuiz, setStartQuiz] = useState(false);
   const [settings, setSettings] = useCookie('quizKana', getInitialSettings());
   const settingsObj = JSON.parse(settings);
 
-  let chars = [];
+  let chars: object[] = [];
 
   if (settingsObj) {
     if (settingsObj.hiragana) chars = hiragana;
@@ -47,7 +52,7 @@ const Kana = props => {
 
   const questions = chars.sort(() => 0.5 - Math.random());
 
-  const setSettingsOption = setting => {
+  const setSettingsOption = (setting: SettingObject) => {
     setSettings(
       JSON.stringify({
         ...settingsObj,

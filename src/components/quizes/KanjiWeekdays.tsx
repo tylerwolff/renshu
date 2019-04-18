@@ -3,9 +3,9 @@ import { Helmet } from 'react-helmet';
 import VocabularyQuiz from '../VocabularyQuiz';
 import QuizIntro from '../QuizIntro';
 import { Text } from '../ui';
-import weekdays from '../../lib/weekdays';
+import weekdays from '../../lib/weekdays.json';
 
-const QuizNumbers = props => {
+const QuizNumbers = () => {
   const [startQuiz, setStartQuiz] = useState(false);
   const vocabulary = weekdays.vocabulary
     .slice(0)

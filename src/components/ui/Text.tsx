@@ -1,6 +1,10 @@
 import styled from '@emotion/styled';
 
-const Text = styled.p`
+interface TextProps {
+  readonly margin?: string;
+}
+
+const Text = styled.p<TextProps>`
   font-size: 1.15em;
   margin: ${({ margin }) => margin || '1em'};
   line-height: 1.4;
