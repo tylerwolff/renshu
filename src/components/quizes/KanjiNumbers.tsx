@@ -21,7 +21,7 @@ const QuizNumbers = () => {
       ) : (
         <QuizIntro
           name="Kanji - Basic Numbers"
-          instructions="To complete this quiz, type in either the sound or number corresponding to each kanji character. The quiz includes 1-10, 100, 1000, and 10000."
+          instructions="To complete this quiz, type in either the romaji or number corresponding to each kanji character. The quiz includes the numbers 1-10, 100, 1000, and 10000."
           onStart={() => setStartQuiz(true)}
         />
       )}

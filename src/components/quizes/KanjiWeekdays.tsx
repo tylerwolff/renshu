@@ -26,7 +26,7 @@ const QuizNumbers = () => {
       ) : (
         <QuizIntro
           name="Kanji - Weekdays"
-          instructions="To complete this quiz, type in the English weekday corresponding to each japanese word."
+          instructions="To complete this quiz, type in the weekday corresponding to each Japanese day."
           onStart={() => setStartQuiz(true)}
         >
           <Text>
