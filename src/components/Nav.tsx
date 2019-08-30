@@ -10,6 +10,7 @@ const NavToggle = styled.button`
   left: 1em;
   background: none;
   border: 0;
+  font-size: inherit;
   cursor: pointer;
 `;
 
