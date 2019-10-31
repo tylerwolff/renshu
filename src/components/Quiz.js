@@ -45,11 +45,18 @@ class Quiz extends Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
   handleChange(e) {
     const val = e.target.value.trim().toLowerCase();
     const { current } = this.state;
+
+    if (val.includes('?')) {
+      return this.setState({
+        answer: current.sound
+      });
+    }
 
     if (val === current.sound || val === current.romaji) {
       const remainingCharacters = this.state.all.slice(1);
@@ -61,6 +68,12 @@ class Quiz extends Component {
     }
 
     this.setState({ answer: val });
+  }
+
+  handleKeyPress(e) {
+    if (e.key === 'Enter') {
+      this.handleChange(e);
+    }
   }
 
   render() {
@@ -86,6 +99,7 @@ class Quiz extends Component {
                   type="text"
                   value={answer}
                   onChange={this.handleChange}
+                  onKeyPress={this.handleKeyPress}
                   placeholder={inputPlaceholder}
                   onBlur={() =>
                     this.setState({ inputPlaceholder: placeholder })
