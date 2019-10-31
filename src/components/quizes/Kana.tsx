@@ -7,11 +7,14 @@ import QuizIntro from '../QuizIntro';
 
 // Character sets
 import hiragana from '../../lib/hiragana';
+import hiraganaYoon from '../../lib/hiragana-yoon';
 import katakana from '../../lib/katakana';
+import katakanaYoon from '../../lib/katakana-yoon';
 
 interface SettingObject {
   hiragana?: boolean;
   katakana?: boolean;
+  yoon?: boolean;
 }
 
 const OptionsForm = styled.form`
@@ -33,6 +36,7 @@ const getInitialSettings = (): string => {
   return JSON.stringify({
     hiragana: true,
     katakana: true,
+    yoon: true,
   });
 };
 
@@ -44,10 +48,19 @@ const Kana = () => {
   let chars: object[] = [];
 
   if (settingsObj) {
-    if (settingsObj.hiragana) chars = hiragana;
-    if (settingsObj.katakana) chars = chars.concat(katakana);
+    if (settingsObj.hiragana) {
+      chars = hiragana;
+      if (settingsObj.yoon) chars = chars.concat(hiraganaYoon)
+    }
+    if (settingsObj.katakana) {
+      chars = chars.concat(katakana);
+      if (settingsObj.yoon) chars = chars.concat(katakanaYoon)
+    }
+    if (settingsObj.yoon && !settingsObj.hiragana && !settingsObj.katakana) {
+      chars = hiraganaYoon.concat(katakanaYoon)
+    }
   } else {
-    chars = hiragana.concat(katakana);
+    chars = hiragana.concat(hiraganaYoon).concat(katakana).concat(katakanaYoon);
   }
 
   const questions = chars.sort(() => 0.5 - Math.random());
@@ -103,6 +116,21 @@ const Kana = () => {
                   }
                 />
                 <strong>Katakana</strong> カタカナ
+              </label>
+            </div>
+            <div>
+              <label>
+                <OptionCheck
+                  name="yoon"
+                  type="checkbox"
+                  checked={settingsObj.yoon}
+                  onChange={() =>
+                    setSettingsOption({
+                      yoon: !settingsObj.yoon,
+                    })
+                  }
+                />
+                <strong>Yōon</strong> ようおん
               </label>
             </div>
           </OptionsForm>
