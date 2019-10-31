@@ -56,6 +56,9 @@ const Kana = () => {
       chars = chars.concat(katakana);
       if (settingsObj.yoon) chars = chars.concat(katakanaYoon)
     }
+    if (settingsObj.yoon && !settingsObj.hiragana && !settingsObj.katakana) {
+      chars = hiraganaYoon.concat(katakanaYoon)
+    }
   } else {
     chars = hiragana.concat(hiraganaYoon).concat(katakana).concat(katakanaYoon);
   }
