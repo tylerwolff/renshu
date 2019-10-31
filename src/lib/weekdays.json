@@ -5,49 +5,49 @@
       "hiragana": "げつようび",
       "romaji": "getsuyōbi",
       "english": "monday",
-      "matches": "monday"
+      "answers": ["monday"]
     },
     {
       "kanji": "火曜日",
       "hiragana": "かようび",
       "romaji": "kayōbi",
       "english": "tuesday",
-      "matches": "tuesday"
+      "answers": ["tuesday"]
     },
     {
       "kanji": "水曜日",
       "hiragana": "すいようび",
       "romaji": "suiyōbi",
       "english": "wednesday",
-      "matches": "wednesday"
+      "answers": ["wednesday"]
     },
     {
       "kanji": "木曜日",
       "hiragana": "もくようび",
       "romaji": "mokuyōbi",
       "english": "thursday",
-      "matches": "thursday"
+      "answers": ["thursday"]
     },
     {
       "kanji": "金曜日",
       "hiragana": "きんようび",
       "romaji": "kinyōbi",
       "english": "friday",
-      "matches": "friday"
+      "answers": ["friday"]
     },
     {
       "kanji": "土曜日",
       "hiragana": "どようび",
       "romaji": "doyōbi",
       "english": "saturday",
-      "matches": "saturday"
+      "answers": ["saturday"]
     },
     {
       "kanji": "日曜日",
       "hiragana": "にちようび",
       "romaji": "nichiyōbi",
       "english": "sunday",
-      "matches": "sunday"
+      "answers": ["sunday"]
     }
   ],
   "resources": ["https://nipponrama.com/days-week-japanese/"]

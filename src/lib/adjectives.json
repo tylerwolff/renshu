@@ -4,163 +4,163 @@
       "hiragana": "おおきい",
       "romaji": "ookii",
       "english": "big",
-      "matches": "big|large"
+      "answers": ["big", "large"]
     },
     {
       "hiragana": "ちいさい",
       "romaji": "chiisai",
       "english": "small",
-      "matches": "small|little"
+      "answers": ["small", "little"]
     },
     {
       "hiragana": "いい",
       "romaji": "ii",
       "english": "good",
-      "matches": "good"
+      "answers": ["good"]
     },
     {
       "hiragana": "わるい",
       "romaji": "warui",
       "english": "bad",
-      "matches": "bad"
+      "answers": ["bad"]
     },
     {
       "hiragana": "すごい",
       "romaji": "sugoi",
       "english": "great",
-      "matches": "great|amazing|good"
+      "answers": ["great", "amazing", "good"]
     },
     {
       "hiragana": "あたらしい",
       "romaji": "atarashii",
       "english": "new",
-      "matches": "new"
+      "answers": ["new"]
     },
     {
       "hiragana": "ふるい",
       "romaji": "furui",
       "english": "old",
-      "matches": "old"
+      "answers": ["old"]
     },
     {
       "hiragana": "さむい",
       "romaji": "samui",
       "english": "cold",
-      "matches": "cold"
+      "answers": ["cold"]
     },
     {
       "hiragana": "あつい",
       "romaji": "atsui",
       "english": "hot",
-      "matches": "hot"
+      "answers": ["hot"]
     },
     {
       "hiragana": "かっこいい",
       "romaji": "kakkoii",
       "english": "cool",
-      "matches": "cool"
+      "answers": ["cool"]
     },
     {
       "hiragana": "たかい",
       "romaji": "takai",
       "english": "expensive",
-      "matches": "expensive"
+      "answers": ["expensive"]
     },
     {
       "hiragana": "やすい",
       "romaji": "yasui",
       "english": "cheap",
-      "matches": "cheap"
+      "answers": ["cheap"]
     },
     {
       "hiragana": "きたない",
       "romaji": "kitanai",
       "english": "dirty",
-      "matches": "dirty"
+      "answers": ["dirty"]
     },
     {
       "hiragana": "たのしい",
       "romaji": "tanoshii",
       "english": "fun",
-      "matches": "fun"
+      "answers": ["fun"]
     },
     {
       "hiragana": "つまらない",
       "romaji": "tsumaranai",
       "english": "boring",
-      "matches": "boring"
+      "answers": ["boring"]
     },
     {
       "hiragana": "やさしい",
       "romaji": "yasashii",
       "english": "easy",
-      "matches": "easy"
+      "answers": ["easy"]
     },
     {
       "hiragana": "むずかしい",
       "romaji": "muzukashii",
       "english": "dificult",
-      "matches": "dificult"
+      "answers": ["dificult"]
     },
     {
       "hiragana": "おもしろい",
       "romaji": "omoshiroi",
       "english": "interesting",
-      "matches": "interesting"
+      "answers": ["interesting"]
     },
     {
       "hiragana": "いそがしい",
       "romaji": "isogashii",
       "english": "busy",
-      "matches": "busy"
+      "answers": ["busy"]
     },
     {
       "hiragana": "こわい",
       "romaji": "kowai",
       "english": "scary",
-      "matches": "scary"
+      "answers": ["scary"]
     },
     {
       "hiragana": "きれい(な)",
       "romaji": "kirei",
       "english": "pretty",
-      "matches": "pretty"
+      "answers": ["pretty"]
     },
     {
       "hiragana": "しずか(な)",
       "romaji": "shizuka",
       "english": "quiet",
-      "matches": "quiet"
+      "answers": ["quiet"]
     },
     {
       "hiragana": "にぎやか(な)",
       "romaji": "nigiyaka",
       "english": "lively",
-      "matches": "lively"
+      "answers": ["lively"]
     },
     {
       "hiragana": "げんき(な)",
       "romaji": "genki",
       "english": "happy",
-      "matches": "happy"
+      "answers": ["happy"]
     },
     {
       "hiragana": "すき(な)",
       "romaji": "suki",
       "english": "like",
-      "matches": "like"
+      "answers": ["like"]
     },
     {
       "hiragana": "きらい(な)",
       "romaji": "kirai",
       "english": "dislike",
-      "matches": "dislike"
+      "answers": ["dislike"]
     },
     {
       "hiragana": "ひま(な)",
       "romaji": "hima",
       "english": "free",
-      "matches": "free"
+      "answers": ["free"]
     }
   ]
 }
