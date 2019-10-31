@@ -52,11 +52,18 @@ class VocabularyQuiz extends Component {
     };
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
   }
 
   handleChange(e) {
     const val = e.target.value.toLowerCase();
     const { currentWord } = this.state;
+
+    if (val.includes('?')) {
+      return this.setState({
+        answer: currentWord.answers[0]
+      });
+    }
     
     if (currentWord.answers.includes(val)) {
       const remainingCharacters = this.state.words.slice(1);
@@ -68,6 +75,12 @@ class VocabularyQuiz extends Component {
     }
 
     this.setState({ answer: val });
+  }
+
+  handleKeyPress(e) {
+    if (e.key === 'Enter') {
+      this.handleChange(e);
+    }
   }
 
   render() {
@@ -94,6 +107,7 @@ class VocabularyQuiz extends Component {
                   type="text"
                   value={answer}
                   onChange={this.handleChange}
+                  onKeyPress={this.handleKeyPress}
                   placeholder={inputPlaceholder}
                   onBlur={() =>
                     this.setState({ inputPlaceholder: placeholder })
