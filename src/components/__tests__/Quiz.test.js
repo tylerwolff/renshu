@@ -5,6 +5,8 @@ import hiragana from '../../lib/hiragana';
 import hiraganaYoon from '../../lib/hiragana-yoon';
 
 it('renders correctly', () => {
-  const tree = TestRenderer.create(<Quiz questions={hiragana, hiraganaYoon} />).toJSON();
+  const tree = TestRenderer.create(
+    <Quiz questions={hiragana.concat(hiraganaYoon)} />
+  ).toJSON();
   expect(tree).toMatchSnapshot();
 });
